@@ -1,0 +1,130 @@
+
+07/05/2022 09:50:10----LOG--local = C:\Users\luantran\Desktop\QniRemote
+07/05/2022 09:50:10----LOG--servers len = 2
+07/05/2022 09:50:10----LOG--servers 0 = VPS199
+07/05/2022 09:50:13--VPS199--LOG--local = C:\Users\luantran\Desktop\QniRemote
+07/05/2022 09:50:13--VPS199--LOG--servers len = 2
+07/05/2022 09:50:13--VPS199--LOG--servers 0 = VPS199
+07/05/2022 09:50:14--VPS199--LOG--listenFirestore
+07/05/2022 15:35:28--VPS199--LOG--New Remote:Google.Cloud.Firestore.DocumentSnapshot
+07/05/2022 15:35:28--VPS199--LOG--server = xxxxxxxxxxxxxxxxx
+07/05/2022 15:35:28--VPS199--LOG--server = xxxxxxxxxxxxxxxxx
+07/05/2022 15:35:28--VPS199--LOG--server = xxxxxxxxxxxxxxxxx
+07/05/2022 15:35:28--VPS199--LOG--server = VPS196
+07/05/2022 15:35:28--VPS199--LOG--server = VPS246
+07/05/2022 15:35:28--VPS199--LOG--server = VPS8
+07/05/2022 15:35:28--VPS199--LOG--server = VPS199
+07/05/2022 15:35:28--VPS199--LOG--server = xxxxxxxxxxxxxxxxx
+07/05/2022 15:35:28--VPS199--LOG--minRVTime = 0
+07/05/2022 15:35:28--VPS199--LOG--timeSpan = 2306.0842
+07/05/2022 15:35:28--VPS199--LOG--remote request is overtime
+07/05/2022 15:36:09----LOG--local = C:\Users\luantran\Desktop\QniRemote
+07/05/2022 15:36:09----LOG--servers len = 2
+07/05/2022 15:36:09----LOG--servers 0 = VPS199
+07/05/2022 15:36:10--VPS199--LOG--local = C:\Users\luantran\Desktop\QniRemote
+07/05/2022 15:36:10--VPS199--LOG--servers len = 2
+07/05/2022 15:36:10--VPS199--LOG--servers 0 = VPS199
+07/05/2022 15:36:10--VPS199--LOG--listenFirestore
+07/05/2022 15:36:10--VPS199--LOG--New Remote:Google.Cloud.Firestore.DocumentSnapshot
+07/05/2022 15:36:10--VPS199--LOG--server = xxxxxxxxxxxxxxxxx
+07/05/2022 15:36:10--VPS199--LOG--server = xxxxxxxxxxxxxxxxx
+07/05/2022 15:36:10--VPS199--LOG--server = xxxxxxxxxxxxxxxxx
+07/05/2022 15:36:10--VPS199--LOG--server = VPS196
+07/05/2022 15:36:10--VPS199--LOG--server = VPS246
+07/05/2022 15:36:10--VPS199--LOG--server = VPS8
+07/05/2022 15:36:10--VPS199--LOG--server = VPS199
+07/05/2022 15:36:10--VPS199--LOG--server = xxxxxxxxxxxxxxxxx
+07/05/2022 15:36:10--VPS199--LOG--minRVTime = 0
+07/05/2022 15:36:10--VPS199--LOG--timeSpan = 44627.0894
+07/05/2022 15:36:10--VPS199--LOG--remote request is overtime
+07/05/2022 15:36:44--VPS199--LOG--New Remote:Google.Cloud.Firestore.DocumentSnapshot
+07/05/2022 15:36:44--VPS199--LOG--server = xxxxxxxxxxxxxxxxx
+07/05/2022 15:36:44--VPS199--LOG--server = xxxxxxxxxxxxxxxxx
+07/05/2022 15:36:44--VPS199--LOG--server = xxxxxxxxxxxxxxxxx
+07/05/2022 15:36:44--VPS199--LOG--server = VPS8
+07/05/2022 15:36:44--VPS199--LOG--server = VPS199
+07/05/2022 15:36:44--VPS199--LOG--server = xxxxxxxxxxxxxxxxx
+07/05/2022 15:36:44--VPS199--LOG--minRVTime = 0
+07/05/2022 15:36:44--VPS199--LOG--timeSpan = 2192.9447
+07/05/2022 15:36:44--VPS199--LOG--remote request is overtime
+07/05/2022 15:36:50--VPS199--LOG--New Remote:Google.Cloud.Firestore.DocumentSnapshot
+07/05/2022 15:36:50--VPS199--LOG--server = xxxxxxxxxxxxxxxxx
+07/05/2022 15:36:50--VPS199--LOG--server = xxxxxxxxxxxxxxxxx
+07/05/2022 15:36:50--VPS199--LOG--server = xxxxxxxxxxxxxxxxx
+07/05/2022 15:36:50--VPS199--LOG--server = VPS8
+07/05/2022 15:36:50--VPS199--LOG--server = VPS199
+07/05/2022 15:36:50--VPS199--LOG--server = xxxxxxxxxxxxxxxxx
+07/05/2022 15:36:50--VPS199--LOG--minRVTime = 0
+07/05/2022 15:36:50--VPS199--LOG--timeSpan = 2200.7259
+07/05/2022 15:36:50--VPS199--LOG--remote request is overtime
+07/05/2022 15:38:00----LOG--local = C:\Users\luantran\Desktop\QniRemote
+07/05/2022 15:38:00----LOG--servers len = 2
+07/05/2022 15:38:00----LOG--servers 0 = VPS199
+07/05/2022 15:38:01--VPS199--LOG--local = C:\Users\luantran\Desktop\QniRemote
+07/05/2022 15:38:01--VPS199--LOG--servers len = 2
+07/05/2022 15:38:01--VPS199--LOG--servers 0 = VPS199
+07/05/2022 15:38:01--VPS199--LOG--listenFirestore
+07/05/2022 15:38:02--VPS199--LOG--New Remote:Google.Cloud.Firestore.DocumentSnapshot
+07/05/2022 15:38:02--VPS199--LOG--server = xxxxxxxxxxxxxxxxx
+07/05/2022 15:38:02--VPS199--LOG--server = xxxxxxxxxxxxxxxxx
+07/05/2022 15:38:02--VPS199--LOG--server = xxxxxxxxxxxxxxxxx
+07/05/2022 15:38:02--VPS199--LOG--server = VPS8
+07/05/2022 15:38:02--VPS199--LOG--server = VPS199
+07/05/2022 15:38:02--VPS199--LOG--server = xxxxxxxxxxxxxxxxx
+07/05/2022 15:38:02--VPS199--LOG--minRVTime = 0
+07/05/2022 15:38:02--VPS199--LOG--timeSpan = 74067.7335
+07/05/2022 15:38:02--VPS199--LOG--remote request is overtime
+07/05/2022 15:38:02--VPS199--LOG--New Remote:Google.Cloud.Firestore.DocumentSnapshot
+07/05/2022 15:38:02--VPS199--LOG--server = xxxxxxxxxxxxxxxxx
+07/05/2022 15:38:02--VPS199--LOG--server = xxxxxxxxxxxxxxxxx
+07/05/2022 15:38:02--VPS199--LOG--server = xxxxxxxxxxxxxxxxx
+07/05/2022 15:38:02--VPS199--LOG--server = VPS8
+07/05/2022 15:38:02--VPS199--LOG--server = VPS199
+07/05/2022 15:38:02--VPS199--LOG--server = xxxxxxxxxxxxxxxxx
+07/05/2022 15:38:02--VPS199--LOG--minRVTime = 0
+07/05/2022 15:38:02--VPS199--LOG--timeSpan = 80426.9524
+07/05/2022 15:38:02--VPS199--LOG--remote request is overtime
+07/05/2022 15:38:02--VPS199--LOG--New Remote:Google.Cloud.Firestore.DocumentSnapshot
+07/05/2022 15:38:02--VPS199--LOG--server = xxxxxxxxxxxxxxxxx
+07/05/2022 15:38:02--VPS199--LOG--server = xxxxxxxxxxxxxxxxx
+07/05/2022 15:38:02--VPS199--LOG--server = xxxxxxxxxxxxxxxxx
+07/05/2022 15:38:02--VPS199--LOG--server = VPS196
+07/05/2022 15:38:02--VPS199--LOG--server = VPS246
+07/05/2022 15:38:02--VPS199--LOG--server = VPS8
+07/05/2022 15:38:02--VPS199--LOG--server = VPS199
+07/05/2022 15:38:02--VPS199--LOG--server = xxxxxxxxxxxxxxxxx
+07/05/2022 15:38:02--VPS199--LOG--minRVTime = 0
+07/05/2022 15:38:02--VPS199--LOG--timeSpan = 156321.1011
+07/05/2022 15:38:02--VPS199--LOG--remote request is overtime
+07/05/2022 15:38:35--VPS199--LOG--New Remote:Google.Cloud.Firestore.DocumentSnapshot
+07/05/2022 15:38:35--VPS199--LOG--server = xxxxxxxxxxxxxxxxx
+07/05/2022 15:38:35--VPS199--LOG--server = xxxxxxxxxxxxxxxxx
+07/05/2022 15:38:35--VPS199--LOG--server = xxxxxxxxxxxxxxxxx
+07/05/2022 15:38:35--VPS199--LOG--server = VPS8
+07/05/2022 15:38:35--VPS199--LOG--server = VPS199
+07/05/2022 15:38:35--VPS199--LOG--server = xxxxxxxxxxxxxxxxx
+07/05/2022 15:38:35--VPS199--LOG--minRVTime = 0
+07/05/2022 15:38:35--VPS199--LOG--timeSpan = 2206.8932
+07/05/2022 15:38:35--VPS199--LOG--remote request is overtime
+07/05/2022 16:29:31--VPS199--LOG--New Remote:Google.Cloud.Firestore.DocumentSnapshot
+07/05/2022 16:29:31--VPS199--LOG--server = xxxxxxxxxxxxxxxxx
+07/05/2022 16:29:31--VPS199--LOG--server = xxxxxxxxxxxxxxxxx
+07/05/2022 16:29:31--VPS199--LOG--server = xxxxxxxxxxxxxxxxx
+07/05/2022 16:29:31--VPS199--LOG--server = VPS196
+07/05/2022 16:29:31--VPS199--LOG--server = VPS246
+07/05/2022 16:29:31--VPS199--LOG--server = VPS8
+07/05/2022 16:29:31--VPS199--LOG--server = VPS199
+07/05/2022 16:29:31--VPS199--LOG--server = xxxxxxxxxxxxxxxxx
+07/05/2022 16:29:31--VPS199--LOG--minRVTime = 0
+07/05/2022 16:29:31--VPS199--LOG--timeSpan = 2233.4987
+07/05/2022 16:29:31--VPS199--LOG--remote request is overtime
+07/06/2022 04:21:41--VPS199--LOG--New Remote:Google.Cloud.Firestore.DocumentSnapshot
+07/06/2022 04:21:41--VPS199--LOG--server = xxxxxxxxxxxxxxxxx
+07/06/2022 04:21:41--VPS199--LOG--server = xxxxxxxxxxxxxxxxx
+07/06/2022 04:21:41--VPS199--LOG--server = xxxxxxxxxxxxxxxxx
+07/06/2022 04:21:41--VPS199--LOG--server = VPS196
+07/06/2022 04:21:41--VPS199--LOG--server = VPS199
+07/06/2022 04:21:41--VPS199--LOG--server = xxxxxxxxxxxxxxxxx
+07/06/2022 04:21:41--VPS199--LOG--minRVTime = 0
+07/06/2022 04:21:41--VPS199--LOG--timeSpan = 2447.3848
+07/06/2022 04:21:41--VPS199--LOG--remote request is overtime

@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>YtAuto23 Remote</title>
+	<style>
+	.divScroll {
+	overflow:scroll;
+	height:200px;
+	width:400px;
+	}
+	</style>
+	<!--
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+	-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css">
+
+</head>
+
+<body>
+	<!--
+	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+	-->
+	<script src="/socket.io/socket.io.js"></script>
+	<script>
+		var urName = "<%=username%>";
+		if (urName.length > 0)
+			alert(urName);
+		
+		var test = '<%- JSON.stringify(servers) %>'; // test is now a valid js object
+		console.log(test);
+		var o = JSON.parse(test)
+		console.log(o[0]);
+		console.log(o[0].name);
+		/*
+		let jservers = "<%=servers%>";
+		//alert(jservers);
+		console.log(jservers.length);
+		for (var i = 0; i < jservers.length; i++) {
+			// Iterate over numeric indexes from 0 to 5, as everyone expects.
+			//console.log(jservers[i]);
+			const myObj = JSON.parse(jservers[i]);
+			x = myObj.name;
+			console.log(x);
+		}
+		*/
+		/*
+		"<%=servers%>".forEach(function(server){
+			console.log(server)
+		 });
+		 */
+		 function EditType() {
+		  //window.location = 'edittype?name=' + name + '&age=' + age;
+		  var terms = document.getElementById("checkboxes")
+		  window.location = "/edittype?name=mau&age="+terms;
+		}
+		var openFile = function(event) {
+			var input = event.target;
+			//alert(input.files[0]);
+			var reader = new FileReader();
+			reader.onload = function(){
+				var text = reader.result;
+				//var node = document.getElementById('commentText');
+				//node.innerText = text;
+				document.getElementById("commentText").value = text;
+				console.log(reader.result.substring(0, 200));
+			};
+			reader.readAsText(input.files[0]);
+		};
+		function submitCode() {
+			/*
+			var rawFile = new XMLHttpRequest();
+			var file = document.getElementById("commentFile").value;
+			alert(file);
+			rawFile.open("GET", file, false);
+			rawFile.onreadystatechange = function ()
+			{
+				if(rawFile.readyState === 4)
+				{
+					if(rawFile.status === 200 || rawFile.status == 0)
+					{
+						var allText = rawFile.responseText;
+						//alert(allText);
+						document.getElementById("commentText").value = allText;
+					}
+				}
+			}
+			rawFile.send(null);
+			*/
+			//document.getElementById("commentText").value = "My value";
+		}
+		//socket.on('chat message', function(msg) {
+		  socket.on('youtube', function(msg) {
+			console.log(msg);
+		  });
+	</script>
+	<!--
+    <form action="/formFillUp" method="POST" enctype="multipart/form-data">
+	-->
+	<form action="/formFillUp" method="POST"  enctype="multipart/form-data" onsubmit="submitCode()">
+		<div class="row" style="margin: 2px 30px;">
+            <p>Welcome <%=username%>, You are logged in.</p>
+			<!--
+			<dl id="checkboxes">
+				<dt>same label or term</dt>
+				<dd><input type="checkbox" id="chk1" name="selectServer"/><label for="chk1">checkbox 1</label></dd>
+				<dd><input type="checkbox" id="chk2" name="selectServer"/><label for="chk2">checkbox 2</label></dd>
+				<dd><input type="checkbox" id="chk3" name="selectServer"/><label for="chk3">checkbox 3</label></dd>
+				<dd><input type="checkbox" id="chk4" name="selectServer"/><label for="chk4">checkbox 4</label></dd>
+		  </dl>
+		  http://perkframework.com/v1/guides/creating-a-dynamic-view-with-ejs.html	
+		  -->
+		  <dl id="checkboxes" class="divScroll" style="display: none;">
+				<!--
+				<dt>same label or term</dt>
+				-->
+				<div class="form-check">
+					<dd style="display: none;">
+						<input class="form-check-input" type="checkbox" name="servers" value="xxxxxxxxxxxxxxxxx" id="xxxxxxxxxxxxxxxxx" checked>
+						<label class="form-check-label" for="flexCheckDefault">1</label>
+					</dd>
+					<% servers.forEach(function(server){ %>
+					<dd >
+					<input class="form-check-input" type="checkbox" name="servers" value="<%=server%>" id="<%=server%>" >
+					<label class="form-check-label" for="<%=server%>"><%=server%></label>
+					</dd>
+				  <% }); %>
+					<!--
+					<dd>
+					<input class="form-check-input" type="checkbox" name="food" value="1" id="flexCheckDefault1">
+					<label class="form-check-label" for="flexCheckDefault">1</label>
+					</dd>
+					<dd>
+					<input class="form-check-input" type="checkbox" name="food" value="2" id="flexCheckDefault2">
+					<label class="form-check-label" for="flexCheckDefault">2</label>
+					</dd>
+					<dd>
+					<input class="form-check-input" type="checkbox" name="food" value="3" id="flexCheckDefault2">
+					<label class="form-check-label" for="flexCheckDefault">3</label>
+					</dd>
+					<dd>
+					<input class="form-check-input" type="checkbox" name="food" value="4" id="flexCheckDefault4">
+					<label class="form-check-label" for="flexCheckDefault">4</label>
+					</dd>
+					-->
+				</div> 
+			</dl>
+			
+			
+		
+        </div>
+		<hr />
+		<div class="row" style="margin: 10px 105px;display: none;" >		
+			<% types.forEach(function(type){ %>
+				<div class="col"><label class="col-form-label">VPS loại <%=type%></label>
+					<dl id="checkboxes" class="divScroll">
+				<!--
+				<dt>same label or term</dt>
+				-->
+				<div class="form-check">
+					<dd style="display: none;">
+						<input class="form-check-input" type="checkbox" name="servers" value="xxxxxxxxxxxxxxxxx" id="xxxxxxxxxxxxxxxxx" checked>
+						<label class="form-check-label" for="flexCheckDefault">1</label>
+					</dd>
+					<% servers.forEach(function(server){ %>
+					<script>
+					  //console.log("<%= server.type %>")
+					  console.log(new String("<%= server.type %>").valueOf())
+					</script>
+					<% if (new String(server.type).valueOf() === new String(type).valueOf()) { %>
+						<dd >
+						<input class="form-check-input" type="checkbox" name="servers" value="<%=server.name%>" id="<%=server.name%>" >
+						<label class="form-check-label" for="<%=server.name%>"><%=server.name%></label>
+						</dd>
+					<% } %>
+				  <% }); %>					
+				</div> 
+			</dl>
+				</div>
+			<% }); %>
+        </div>
+		<hr />
+		<div class="row" style="margin: 10px 105px;display: none;" >
+			<div class="col">
+				<!--
+				<button type="button" onclick="EditType()">Tranfer to</button>
+				-->
+				<button type="submit" class="btn btn-primary" style="margin: 2px 30px;" name="tonode" value="updatedb">
+					Tranfer to
+				</button>
+			</div>
+			<div class="col">
+				<select name="types">
+				  <% types.forEach(function(type){ %>
+					<option value="<%=type%>"><%=type%></option>
+				  <% }); %>
+				</select>
+			</div>
+			<div class="col">
+				<!--
+				<button type="button" onclick="EditType()">Tranfer to</button>
+				-->
+				<button type="submit" class="btn btn-primary" style="margin: 2px 30px;" name="tonode" value="delete">
+					Delete
+				</button>
+			</div>
+           
+        </div>
+		<hr />
+		<div class="row" style="display: none; margin: 10px 105px;" >
+            <div class="col-md-7"><input class="form-control" type="text" placeholder="10" name="take" id="take"></div>
+        </div>
+		<script type="text/javascript">
+			document.getElementById('take').value = 'YtAuto23Remote';
+		</script>
+		<hr />
+		<div class="row" style="margin: 2px 30px;">
+            <div class="col"><label class="form-label"></label><label class="form-label">Danh sách IP VPS:</label></div>
+            <div class="col-md-9"><textarea class="form-control" name="ips"></textarea></div>
+			<div class="col"><label class="form-label">
+				<button type="submit" class="btn btn-primary" style="margin: 2px 30px;" name="tonode" value="kill">
+					Kill YtAuto23
+				</button>
+			</div>
+        </div>
+		<hr />
+        <div class="row" style="margin: 2px 30px;">
+            <div class="col"><label class="col-form-label">Số luồng chạy:</label></div>
+            <div class="col-md-7"><input class="form-control" type="text" placeholder="10" name="threadNum"></div>
+        </div>
+		<hr />
+        <div class="row" style="margin: 2px 30px;">
+            <div class="col"><label class="col-form-label">Số lần xem:</label></div>
+            <div class="col-md-7"><input class="form-control" type="text" placeholder="9999" name="runNum"></div>
+        </div>
+		<div class="row" style="margin: 2px 30px;">
+            <div class="col"><label class="col-form-label">Số lần Next sau khi xem:</label></div>
+            <div class="col-md-7"><input class="form-control" type="text" placeholder="0" name="nextStep" id="nextStep"></div>
+        </div>
+		<script type="text/javascript">
+			document.getElementById('nextStep').value = '0';
+		</script>
+		<div class="row" style="margin: 2px 30px;" style="display: none;">
+            <input class="form-control" type="text" placeholder="9999" name="commentText" id="commentText" style="display: none;"></div>
+        </div>
+		<hr />
+        <div class="row" style="margin: 2px 30px;">
+            <div class="col"><label class="col-form-label">Kiểu profile:</label></div>
+            <div class="col-md-7">
+                <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-1" name="radioProfile" value="desktop" checked><label class="form-check-label" for="formCheck-1">Desktop</label></div>
+                <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-2" name="radioProfile" value="mobile"><label class="form-check-label" for="formCheck-2">Mobile</label></div>
+            </div>
+        </div>
+		<hr />
+        <div class="row" style="margin: 2px 30px;">
+            <div class="col"><label class="col-form-label">View Video:</label></div>
+            <div class="col-md-7">
+                <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-9" name="radioView" value="yes"  checked><label class="form-check-label" for="formCheck-9">Yes</label></div>
+                <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-10" name="radioView" value="no" ><label class="form-check-label" for="formCheck-10">No</label></div>
+            </div>
+        </div>
+		<hr />
+        <div class="row" style="margin: 2px 30px;">
+            <div class="col"><label class="col-form-label">Will Comments:</label></div>
+            <div class="col-md-7">
+                <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-7" name="radioComment" value="yes" >
+					<label class="form-check-label" for="formCheck-7">Yes</label>
+				</div>
+                <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-8" name="radioComment" value="no" checked>
+					<label class="form-check-label" for="formCheck-8">No</label>
+				</div>
+            </div>
+			<div class="col-md-7">
+				<span>Upload File Comment:</span>  
+				<input type="file" name="commentfile" accept="text/*" id="commentFile" onchange='openFile(event)'/>
+				<div style="display: none;">
+					<span>Upload File Image:</span>  
+					<input type="file" name="imagefile" accept=".jpg, .png, .jpeg, .gif, .bmp, .tif, .tiff|image/*"/> 
+				</div>
+				  <!--
+				  <input type="submit" value="Upload"> </input>
+				
+				<form action="/uploadProfilePicture" 
+					enctype="multipart/form-data" method="POST">
+				
+				  <span>Upload Profile Picture:</span>  
+				  <input type="file" name="mypic"/> 
+				  <input type="submit" value="Upload"> </input>
+				</form>
+				-->
+			</div>
+        </div>
+		
+		<hr />
+        <div class="row" style="margin: 2px 30px;">
+            <div class="col"><label class="col-form-label">Live Videos:</label></div>
+            <div class="col-md-7">
+                <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-5" name="radioLike" value="yes" ><label class="form-check-label" for="formCheck-5">Yes</label></div>
+                <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-6" name="radioLike" value="no" checked><label class="form-check-label" for="formCheck-6">No</label></div>
+            </div>
+        </div>
+		<hr />
+        <div class="row" style="margin: 2px 30px;">
+            <div class="col"><label class="col-form-label">Will Sub:</label></div>
+            <div class="col-md-7">
+                <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-3" name="radioSub" value="yes"><label class="form-check-label" for="formCheck-3">Yes</label></div>
+                <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-4" name="radioSub" value="no" checked><label class="form-check-label" for="formCheck-4">No</label></div>
+            </div>
+        </div>
+		<hr />
+        <div class="row" style="margin: 2px 30px;">
+            <div class="col"><label class="col-form-label">View Method:</label></div>
+            <div class="col-md-7">
+				<div class="form-check"><input class="form-check-input" type="radio" id="formCheck-11" name="radioViewMethod" value="mix" checked><label class="form-check-label" for="formCheck-11">Mix</label></div>
+                <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-11" name="radioViewMethod" value="search" checked><label class="form-check-label" for="formCheck-11">Search</label></div>
+				<div class="form-check"><input class="form-check-input" type="radio" id="formCheck-11" name="radioViewMethod" value="direct" ><label class="form-check-label" for="formCheck-11">Direct</label></div>
+                <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-12" name="radioViewMethod" value="playlist">
+					<label class="form-check-label" for="formCheck-12">Playlist - EndScreen - WebOnly</label>
+				</div>
+                <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-13" name="radioViewMethod" value="home"><label class="form-check-label" for="formCheck-13">HomePage</label>
+				</div>
+				<div class="form-check"><input class="form-check-input" type="radio" id="formCheck-13" name="radioViewMethod" value="ads"><label class="form-check-label" for="formCheck-13">Ads - WebOnly</label></div>
+				<div class="form-check"><input class="form-check-input" type="radio" id="formCheck-13" name="radioViewMethod" value="suggest"><label class="form-check-label" for="formCheck-13">Suggest</label></div>
+				<div class="form-check"><input class="form-check-input" type="radio" id="formCheck-13" name="radioViewMethod" value="channel"><label class="form-check-label" for="formCheck-13">Channel</label></div>
+				<div class="form-check"><input class="form-check-input" type="radio" id="formCheck-13" name="radioViewMethod" value="facebook"><label class="form-check-label" for="formCheck-13">Facebook</label></div>
+				<div class="form-check"><input class="form-check-input" type="radio" id="formCheck-13" name="radioViewMethod" value="twitter"><label class="form-check-label" for="formCheck-13">Twitter</label></div>
+            </div>
+        </div>
+		<hr />
+		<div class="row" style="margin: 2px 30px;">
+            <div class="col"><label class="col-form-label">Mix View:</label></div>
+            <div class="col-md-7">
+				<div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-11" name="checkMixView" value="empty0000" style="display: none;" checked><label class="form-check-label" for="formCheck-11"></label></div>
+                <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-11" name="checkMixView" value="search" checked><label class="form-check-label" for="formCheck-11">Search</label></div>
+				<div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-11" name="checkMixView" value="direct" ><label class="form-check-label" for="formCheck-11">Direct</label></div>
+                <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-12" name="checkMixView" value="playlist">
+					<label class="form-check-label" for="formCheck-12">Playlist - EndScreen - WebOnly</label>
+				</div>
+                <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-13" name="checkMixView" value="home"><label class="form-check-label" for="formCheck-13">HomePage</label>
+				</div>
+				<div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-13" name="checkMixView" value="ads"><label class="form-check-label" for="formCheck-13">Ads - WebOnly</label></div>
+				<div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-13" name="checkMixView" value="suggest"><label class="form-check-label" for="formCheck-13">Suggest</label></div>
+				<div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-13" name="checkMixView" value="channel"><label class="form-check-label" for="formCheck-13">Channel</label></div>
+				<div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-13" name="checkMixView" value="facebook"><label class="form-check-label" for="formCheck-13">Facebook</label></div>
+				<div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-13" name="checkMixView" value="twitter"><label class="form-check-label" for="formCheck-13">Twitter</label></div>
+            </div>
+        </div>
+		<hr />
+		<div class="row" style="margin: 2px 30px;">
+            <div class="col"><label class="col-form-label">Skip Ads:</label></div>
+            <div class="col-md-7">
+                <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-14" name="radioSkipAds" value="yes"><label class="form-check-label" for="formCheck-3">Yes</label></div>
+                <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-15" name="radioSkipAds" value="no" checked><label class="form-check-label" for="formCheck-4">No</label></div>
+            </div>
+        </div>
+		<hr />
+		<div class="row" style="margin: 2px 30px;">
+            <div class="col"><label class="col-form-label">Time View Main Video:</label></div>
+            <div class="col-md-7">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr></tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Min Value</td>
+                                <td><input class="form-control" type="text" placeholder="150000" defaultValue="15000" name="minMainTime"></td>
+                            </tr>
+                            <tr>
+                                <td>Max Value</td>
+                                <td><input class="form-control" type="text" placeholder="250000" defaultValue="25000"  name="maxMainTime"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+		<hr />
+        <div class="row" style="margin: 2px 30px;" >
+            <div class="col"><label class="col-form-label">Time View Related Video:</label></div>
+            <div class="col-md-7">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr></tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Min Value</td>
+                                <td><input class="form-control" type="text" placeholder="15000" defaultValue="15000" name="minRVTime"></td>
+                            </tr>
+                            <tr>
+                                <td>Max Value</td>
+                                <td><input class="form-control" type="text" placeholder="25000" defaultValue="25000"  name="maxRVTime"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+		<hr />
+		<div class="row" style="margin: 2px 30px;" >
+            <div class="col"><label class="col-form-label">Random View Time:</label></div>
+            <div class="col-md-7">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr></tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Min Value</td>
+                                <td><input class="form-control" type="text" placeholder="40000" defaultValue="40000" name="minRanTime"></td>
+                            </tr>
+                            <tr>
+                                <td>Max Value</td>
+                                <td><input class="form-control" type="text" placeholder="60004" defaultValue="60004"  name="maxRanTime"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+		<hr />
+		
+        <div class="row" style="margin: 2px 30px;">
+            <div class="col"><label class="col-form-label">View Per Gmail:</label></div>
+            <div class="col-md-7"><input class="form-control" type="text" placeholder="5" name="viewPerGmail" id="viewPerGmail"></div>
+        </div>
+		<hr />
+		<script type="text/javascript">
+			document.getElementById('viewPerGmail').value = '5';
+		</script>
+        <div class="row" style="margin: 2px 30px;">
+            <div class="col"><label class="form-label"></label><label class="form-label">Dữ liệu tìm kiếm:</label></div>
+            <div class="col-md-9"><textarea class="form-control" name="searchDb"></textarea></div>
+        </div>
+		<hr />
+        <div class="row" style="margin: 2px 30px;">
+            <div class="col"><label class="form-label"></label><label class="form-label">Dữ liệu playlist:</label></div>
+            <div class="col-md-9"><textarea class="form-control" name="playlistDb"></textarea></div>
+        </div>
+		<hr />
+        <div class="row" style="margin: 2px 30px;">
+            <div class="col"><label class="form-label"></label><label class="form-label">Dữ liệu Homepage:</label></div>
+            <div class="col-md-9"><textarea class="form-control" name="homeDb"></textarea></div>
+        </div>
+		<hr />
+		<div class="row" style="margin: 2px 30px;">
+            <div class="col"><label class="form-label"></label><label class="form-label">Dữ liệu Channel:</label></div>
+            <div class="col-md-9"><textarea class="form-control" name="channelDb"></textarea></div>
+        </div>
+		<hr />
+		<div class="row" style="margin: 2px 30px;">
+            <div class="col"><label class="form-label"></label><label class="form-label">Dữ liệu List Videos:</label></div>
+            <div class="col-md-9"><textarea class="form-control" name="listvideoDb"></textarea></div>
+        </div>
+		<hr />
+        <div class="row"></div>
+        <div class="row"></div>
+        <div class="row"></div>
+		<button type="submit" class="btn btn-primary" style="margin: 2px 30px;" name="tonode" value="qniremote">
+                Submit
+            </button>
+    </form>
+    
+</body>
+
+</html>
